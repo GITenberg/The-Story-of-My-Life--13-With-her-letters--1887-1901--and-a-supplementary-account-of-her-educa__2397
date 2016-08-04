@@ -1,0 +1,45 @@
+_repo: The-Story-of-My-Life--13-With-her-letters--1887-1901--and-a-supplementary-account-of-her-educa__2397
+_version: 0.0.1
+contributor:
+  contributors:
+  - agent_name: Macy, John Albert
+    birthdate: 1877
+    deathdate: 1932
+    gutenberg_agent_id: '897'
+    url: http://www.gutenberg.org/2009/agents/897
+  - agent_name: Sullivan, Annie
+    aliases:
+    - Sullivan, Anne Mansfield
+    - Macy, Anne Sullivan
+    birthdate: 1866
+    deathdate: 1936
+    gutenberg_agent_id: '896'
+    url: http://www.gutenberg.org/2009/agents/896
+    wikipedia: http://en.wikipedia.org/wiki/Anne_Sullivan
+creator:
+  author:
+    agent_name: Keller, Helen
+    alias: Keller, Helen Adams
+    birthdate: 1880
+    deathdate: 1968
+    gutenberg_agent_id: '895'
+    url: http://www.gutenberg.org/2009/agents/895
+    wikipedia: http://en.wikipedia.org/wiki/Helen_Keller
+description: ''
+gutenberg_issued: '2000-11-01'
+gutenberg_type: Text
+identifiers:
+  gutenberg: '2397'
+language: en
+publisher: Project Gutenberg
+rights: Public domain in the USA.
+rights_url: http://creativecommons.org/about/pdm
+subjects:
+- !lcc 'HV'
+- !lcsh 'Keller, Helen, 1880-1968'
+- !lcsh 'Deafblind women -- United States -- Biography'
+- GITenberg
+title: "The Story of My Life\r\nWith her letters (1887-1901) and a supplementary account\
+  \ of her education, including passages from the reports and letters of her teacher,\
+  \ Anne Mansfield Sullivan, by John Albert Macy"
+url: http://www.gutenberg.org/ebooks/2397
