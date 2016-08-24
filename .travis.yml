@@ -1,0 +1,61 @@
+sudo: required
+dist: trusty
+language: ruby
+
+before_install:
+before_install:
+- gem install asciidoctor -v 1.5.2
+- gem install tilt
+- sudo pip install git+https://github.com/gitenberg-dev/gitberg
+- sudo pip install pillow
+- sudo pip install cssutils
+- sudo pip install docutils
+- sudo pip install roman
+- sudo pip install git+https://github.com/gitenberg-dev/pg-epubmaker
+script:
+- VERSION=`ruby -e "require 'yaml'; meta = YAML.load_file('metadata.yaml'); puts meta['_version'];"`
+- git clone https://github.com/gitenberg-dev/asciidoctor-htmlbook.git
+- sudo pip install -r asciidoctor-htmlbook/gitberg-machine/requirements.txt
+
+- /usr/bin/python -c "from gitenberg import travis; travis.build_epub()"
+- ebook-convert book.epub book.mobi
+- xvfb-run ebook-convert book.epub book.pdf
+branches:
+  only:
+  - master
+notifications:
+  webhooks:
+    urls:
+      - https://unglue.it/api/travisci/webhook
+    on_success: always
+    on_failure: never
+    on_start: never
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+    secure: JRf7bWAe+ZzDJvadWt1SBZHIhcxUjhjE4q22bcZ1QaotJqXtUksqryzA+gY7JMWMHiqdk/EbC6zz7DdffwdAnUlqPJLkbawXTHgBDQEV8oxj+r635Sk0LLfW1LvcHdl375W9u905T5syvWxOeiQNuNMqffxz3cm8vVtQBQpgTXciT8AnnpnDuDrFgj2R/ugxBr8KzeloymiIMifeIa/abGPR6O6SAFNYTbzB2Tk4Tc5OQEzkDOb52Yws2rPboc1wC6ubKyJCZ6xEhatlYNoNiY5CCAAhkmoQgP8tkdcp7tvEVn6QbKylE+LscK5kTv/gIaq0WzwrhNp4GPYoX3vhIJc+bLLSKngRkD4OIYo2cYHZi2MGWBvvfEEeeLUrwF/shFtPM2uyC4MdXP8WDh/uwF+P7gvTdjMK7k9M63mIYb5uzEQgEjNFfwUTTAkG8ozIXROMgI+wLzdInKBcVje40VplftSHIKJmJBQkzY0FmHolUumbPxKfdzd8wWP0iuGA9y+oa97ZXAVKGR6QEHFQgzEYn8ZrghoOvr5MV9XzPxefz9yTg73ZEi2W4HKL/Id39Xyh53ZB+MSSeBuemqHZrefoLd+bo7PkqCNFBm/xI8IHyULo1HfenR5XP3KCt+jreMb1qhZArQLCZECRgdLeuvicvpp3/lcIXZVFAweWEik=
+  file:
+    - book.epub
+    - book.mobi
+    - book.pdf
+  "on":
+    repo: GITenberg/The-Story-of-My-Life--13-With-her-letters--1887-1901--and-a-supplementary-account-of-her-educa__2397
+addons:
+  apt:
+    packages:
+    - xsltproc
+    - xvfb
+    - calibre
+    - python-pip
+    - git
+    - python-dev
+    - libjpeg-dev
+    - libpng-dev
+    - libfreetype6
+    - libfreetype6-dev
+    - zlib1g-dev
+    - python-lxml
+    - libxml2-dev
+    - libxslt1-dev
+    - tidy
