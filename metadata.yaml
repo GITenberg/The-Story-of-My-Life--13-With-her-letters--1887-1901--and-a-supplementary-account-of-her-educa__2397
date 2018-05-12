@@ -1,5 +1,5 @@
 _repo: The-Story-of-My-Life--13-With-her-letters--1887-1901--and-a-supplementary-account-of-her-educa__2397
-_version: 0.1.0
+_version: 0.2.0
 contributor:
   contributors:
   - agent_name: Macy, John Albert
@@ -16,6 +16,9 @@ contributor:
     gutenberg_agent_id: '896'
     url: http://www.gutenberg.org/2009/agents/896
     wikipedia: http://en.wikipedia.org/wiki/Anne_Sullivan
+covers:
+- cover_type: generated
+  image_path: cover.png
 creator:
   author:
     agent_name: Keller, Helen
@@ -26,6 +29,8 @@ creator:
     url: http://www.gutenberg.org/2009/agents/895
     wikipedia: http://en.wikipedia.org/wiki/Helen_Keller
 description: ''
+edition_identifiers:
+  edition_id: http://www.gutenberg.org/ebooks/2397#The-Story-of-My-Life--13-With-her-letters--1887-1901--and-a-supplementary-account-of-her-educa_
 gutenberg_issued: '2000-11-01'
 gutenberg_type: Text
 identifiers:
